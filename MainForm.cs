@@ -26,5 +26,6 @@ namespace MillionareCalculator
             this.label7.Text = secondValue.ToString();
             this.label8.Text = (firstValue + secondValue).ToString();
         }
+
     }
 }
