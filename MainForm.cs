@@ -19,12 +19,23 @@ namespace MillionareCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Int32 firstValue = random.Next(1, 6);
-            Int32 secondValue = random.Next(1, 6);
+            Int32 firstValue;
+            Int32 secondValue;
+            if (this.checkBox1.Checked)
+            {
+                bool isNumeric = Int32.TryParse(this.textBox1.Text, out firstValue);
+                isNumeric = Int32.TryParse(this.textBox2.Text, out secondValue);
+            }
+            else
+            {
+                Random random = new Random();
+                firstValue = random.Next(1, 6);
+                secondValue = random.Next(1, 6);
+            }
             this.label6.Text = firstValue.ToString();
             this.label7.Text = secondValue.ToString();
             this.label8.Text = (firstValue + secondValue).ToString();
+            this.textBox3.AppendText("\r\n" + this.label8.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
