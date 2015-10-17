@@ -12,6 +12,8 @@ namespace MillionareCalculator
 {
     public partial class MainForm : Form
     {
+        Int32 logCounter = 0;
+
         public MainForm()
         {
             InitializeComponent();
@@ -35,7 +37,8 @@ namespace MillionareCalculator
             this.label6.Text = firstValue.ToString();
             this.label7.Text = secondValue.ToString();
             this.label8.Text = (firstValue + secondValue).ToString();
-            this.textBox3.AppendText("\r\n" + this.label8.Text);
+            logCounter++;
+            this.textBox3.AppendText("\r\n" + logCounter.ToString() + " - " + this.label8.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
