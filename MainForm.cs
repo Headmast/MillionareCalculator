@@ -19,14 +19,14 @@ namespace MillionareCalculator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ThrowDice_Click(object sender, EventArgs e)
         {
             Int32 firstValue;
             Int32 secondValue;
-            if (this.checkBox1.Checked)
+            if (this.isManualThrowcheckBox.Checked)
             {
-                bool isNumeric = Int32.TryParse(this.textBox1.Text, out firstValue);
-                isNumeric = Int32.TryParse(this.textBox2.Text, out secondValue);
+                bool isNumeric = Int32.TryParse(this.firstDiceTextBox.Text, out firstValue);
+                isNumeric = Int32.TryParse(this.secondDiceTextBox.Text, out secondValue);
             }
             else
             {
@@ -34,29 +34,23 @@ namespace MillionareCalculator
                 firstValue = random.Next(1, 6);
                 secondValue = random.Next(1, 6);
             }
-            this.label6.Text = firstValue.ToString();
-            this.label7.Text = secondValue.ToString();
-            this.label8.Text = (firstValue + secondValue).ToString();
+            this.firstDiceLabel.Text = firstValue.ToString();
+            this.secondDiceLabel.Text = secondValue.ToString();
+            this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
             logCounter++;
-            this.textBox3.AppendText("\r\n" + logCounter.ToString() + " - " + this.label8.Text);
+            this.loggerTextBox.AppendText("\r\n" + logCounter.ToString() + " - " + this.sumDiceLabel.Text);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBoxDice_TextChanged(object sender, EventArgs e)
         {
-
             Int32 firstValue;
-            bool isNumeric = Int32.TryParse(this.textBox1.Text, out firstValue);
+            bool isNumeric = Int32.TryParse(this.firstDiceTextBox.Text, out firstValue);
             Int32 secondValue;
-            isNumeric = Int32.TryParse(this.textBox2.Text, out secondValue);
-            this.label6.Text = firstValue.ToString();
-            this.label7.Text = secondValue.ToString();
-            this.label8.Text = (firstValue + secondValue).ToString();
+            isNumeric = Int32.TryParse(this.secondDiceTextBox.Text, out secondValue);
+            this.firstDiceLabel.Text = firstValue.ToString();
+            this.secondDiceLabel.Text = secondValue.ToString();
+            this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
+
