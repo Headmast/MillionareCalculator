@@ -51,6 +51,11 @@ namespace MillionareCalculator
             this.secondDiceLabel.Text = secondValue.ToString();
             this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
