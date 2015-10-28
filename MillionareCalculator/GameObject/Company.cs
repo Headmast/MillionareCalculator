@@ -8,6 +8,14 @@ namespace MillionareCalculator.GameObject
 {
     class Company
     {
+        private int _Id;
+
+        public int Id
+        {
+            get { return _Id; }
+            set { _Id = value; }
+        }
+
         private int _Price;
 
         public int Price
