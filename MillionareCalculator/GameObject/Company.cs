@@ -8,7 +8,6 @@ namespace MillionareCalculator.GameObject
 {
     class Company
     {
-
         private int _Price;
 
         public int Price
@@ -57,7 +56,6 @@ namespace MillionareCalculator.GameObject
             set { _IsMonopolyBuilding = value; }
         }
 
-
         public int GetAllRent ()
         {
             return this.Rent;
@@ -66,6 +64,14 @@ namespace MillionareCalculator.GameObject
         public int GetAllTax ()
         {
             return this.Tax;
+        }
+
+        public Company(int price, int rent, int tax, int buildingPrice)
+        {
+            _Price = price;
+            _Rent = rent;
+            _Tax = tax;
+            _BuildingPrice = buildingPrice;
         }
     }
 }

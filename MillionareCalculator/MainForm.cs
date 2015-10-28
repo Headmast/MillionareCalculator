@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MillionareCalculator.GameObject;
 
 namespace MillionareCalculator
 {
     public partial class MainForm : Form
     {
-        Int32 logCounter = 0;
+        private Int32 logCounter = 0;
+        private Sector sector;
 
         public MainForm()
         {
             InitializeComponent();
+            sector = new Sector();
         }
 
         private void ThrowDice_Click(object sender, EventArgs e)

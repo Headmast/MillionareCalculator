@@ -8,5 +8,23 @@ namespace MillionareCalculator.GameObject
 {
     class Sector
     {
+        private List<Company> companies = new List<Company>();
+
+        public Sector()
+        {
+            Company company = new Company(100,5,15,50);
+            companies.Add(company);
+            company = new Company(150,5,15,50);
+            companies.Add(company);
+            company = new Company(200,5,15,50);
+            companies.Add(company);
+        }
+
+        public int GetAllTax () 
+        {
+            int sectorTax = 0;
+            this.companies.ForEach(company => sectorTax += company.GetAllTax());
+            return sectorTax;
+        }
     }
 }
