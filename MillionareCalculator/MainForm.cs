@@ -15,11 +15,23 @@ namespace MillionareCalculator
     {
         private Int32 logCounter = 0;
         private Sector sector;
+        private CompaniesList companies;
 
         public MainForm()
         {
             InitializeComponent();
             sector = new Sector();
+            companies = new CompaniesList();
+            this.conrols();
+        }
+
+        private void conrols()
+        {
+            Label namelabel = new Label();
+            namelabel.Location = new Point(13, 90);
+            namelabel.Text = "sadf";
+            namelabel.AutoSize = true;
+            this.panel3.Controls.Add(namelabel);
         }
 
         private void ThrowDice_Click(object sender, EventArgs e)

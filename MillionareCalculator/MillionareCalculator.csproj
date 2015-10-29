@@ -44,8 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObject\CompaniesList.cs" />
     <Compile Include="GameObject\Company.cs" />
+    <Compile Include="GameObject\Player.cs" />
+    <Compile Include="GameObject\PlayersList.cs" />
     <Compile Include="GameObject\Sector.cs" />
+    <Compile Include="GameObject\SectorsList.cs" />
+    <Compile Include="GameObject\TaxCalculator.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
