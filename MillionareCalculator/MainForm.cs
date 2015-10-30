@@ -32,6 +32,35 @@ namespace MillionareCalculator
             namelabel.Text = "sadf";
             namelabel.AutoSize = true;
             this.panel3.Controls.Add(namelabel);
+
+            CheckBox nameCheckBox = new CheckBox();
+            nameCheckBox.Location = new Point(13, 105);
+            nameCheckBox.Text = "sadf";
+            nameCheckBox.AutoSize = true;
+            this.panel3.Controls.Add(nameCheckBox);
+
+            Panel panel = this.createCompanyPanel(null);
+            panel.Location = new Point(13, 120);
+            this.panel3.Controls.Add(panel);
+            //this.createCompanyPanel(new Company(10, 10, 10, 10));
+            //TextBox txtAmnt = (TextBox)this.Controls.Find("txtAmnt", false).FirstOrDefault();
+            Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
+        }
+
+
+        private Panel createCompanyPanel(Company company)
+        {
+            Panel panel = new Panel();
+            panel.Name = "CompanyName"/* + company.Id.ToString()*/;
+            panel.Height = 20;
+            panel.Width = 300;
+            panel.BackColor = Color.White;
+
+            CheckBox nameCheckBox = new CheckBox();
+            nameCheckBox.Text = "Компания";
+            nameCheckBox.Location = new Point(10, 0);
+            panel.Controls.Add(nameCheckBox);
+            return panel;
         }
 
         private void ThrowDice_Click(object sender, EventArgs e)
