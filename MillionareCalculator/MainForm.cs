@@ -27,24 +27,19 @@ namespace MillionareCalculator
 
         private void conrols()
         {
-            Label namelabel = new Label();
-            namelabel.Location = new Point(13, 90);
-            namelabel.Text = "sadf";
-            namelabel.AutoSize = true;
-            this.panel3.Controls.Add(namelabel);
-
-            CheckBox nameCheckBox = new CheckBox();
-            nameCheckBox.Location = new Point(13, 105);
-            nameCheckBox.Text = "sadf";
-            nameCheckBox.AutoSize = true;
-            this.panel3.Controls.Add(nameCheckBox);
-
             Panel panel = this.createCompanyPanel(null);
             panel.Location = new Point(13, 120);
             this.panel3.Controls.Add(panel);
-            //this.createCompanyPanel(new Company(10, 10, 10, 10));
-            //TextBox txtAmnt = (TextBox)this.Controls.Find("txtAmnt", false).FirstOrDefault();
-            Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
+            panel = this.createCompanyPanel(null);
+            panel.Location = new Point(13, 150);
+            this.panel3.Controls.Add(panel);
+            panel = this.createCompanyPanel(null);
+            panel.Location = new Point(13, 180);
+            this.panel3.Controls.Add(panel);
+            panel = this.createCompanyPanel(null);
+            panel.Location = new Point(13, 210);
+            this.panel3.Controls.Add(panel);
+            //Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
         }
 
 
@@ -52,14 +47,34 @@ namespace MillionareCalculator
         {
             Panel panel = new Panel();
             panel.Name = "CompanyName"/* + company.Id.ToString()*/;
-            panel.Height = 20;
-            panel.Width = 300;
-            panel.BackColor = Color.White;
+            panel.Height = 30;
+            panel.Width = 400;
+            panel.AutoSize = true;
+            panel.BackColor = Color.Gray;
 
             CheckBox nameCheckBox = new CheckBox();
             nameCheckBox.Text = "Компания";
             nameCheckBox.Location = new Point(10, 0);
+            nameCheckBox.Width = 90;
             panel.Controls.Add(nameCheckBox);
+
+            TextBox buildings = new TextBox();
+            buildings.Location = new Point(100, 0);
+            buildings.Width = 50;
+            panel.Controls.Add(buildings);
+
+            Label priceList = new Label();
+            priceList.Location = new Point(150, 0);
+            priceList.Width = 70;
+            priceList.Text = "100, 5, 7, 50";
+            priceList.AutoSize = true;
+            panel.Controls.Add(priceList);
+
+            TextBox player = new TextBox();
+            player.Location = new Point(220, 0);
+            player.Width = 50;
+            panel.Controls.Add(player);
+
             return panel;
         }
 

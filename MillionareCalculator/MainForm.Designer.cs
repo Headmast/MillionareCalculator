@@ -47,6 +47,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.loggerTextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,9 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -258,8 +258,29 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(10, 116);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(216, 247);
+            this.panel3.Size = new System.Drawing.Size(338, 247);
             this.panel3.TabIndex = 17;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(183, 71);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(30, 20);
+            this.textBox6.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(183, 45);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(30, 20);
+            this.textBox5.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(183, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(30, 20);
+            this.textBox4.TabIndex = 13;
             // 
             // label12
             // 
@@ -351,7 +372,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(232, 116);
+            this.button1.Location = new System.Drawing.Point(354, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -360,33 +381,12 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(232, 145);
+            this.button2.Location = new System.Drawing.Point(354, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 19;
             this.button2.Text = "Аренда";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(183, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(30, 20);
-            this.textBox4.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(183, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(30, 20);
-            this.textBox5.TabIndex = 14;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(183, 71);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(30, 20);
-            this.textBox6.TabIndex = 15;
             // 
             // MainForm
             // 
