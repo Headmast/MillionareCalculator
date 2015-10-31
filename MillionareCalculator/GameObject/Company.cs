@@ -16,6 +16,22 @@ namespace MillionareCalculator.GameObject
             set { _Id = value; }
         }
 
+        private int _SectorId;
+
+        public int SectorId
+        {
+            get { return _SectorId; }
+            set { _SectorId = value; }
+        }
+
+        private String _Name;
+
+        public String Name
+        {
+            get { return _Name; }
+            set { _Name = value; }
+        }
+
         private int _Price;
 
         public int Price
@@ -76,6 +92,16 @@ namespace MillionareCalculator.GameObject
 
         public Company(int price, int rent, int tax, int buildingPrice)
         {
+            _Price = price;
+            _Rent = rent;
+            _Tax = tax;
+            _BuildingPrice = buildingPrice;
+        }
+
+        public Company(int id, String name, int price, int rent, int tax, int buildingPrice)
+        {
+            _Id = id;
+            _Name = name;
             _Price = price;
             _Rent = rent;
             _Tax = tax;

@@ -42,37 +42,49 @@ namespace MillionareCalculator
             //Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
         }
 
+        private Panel createSectorPanel(Sector sector)
+        {
+            Panel panel = new Panel();
+            //sector name
+            //array of panels company
+            return panel;
+        }
+
+        // get rent value
+
+        // get tax value
+
 
         private Panel createCompanyPanel(Company company)
         {
             Panel panel = new Panel();
             panel.Name = "CompanyName"/* + company.Id.ToString()*/;
             panel.Height = 30;
-            panel.Width = 350;
+            panel.Width = 225;
             panel.AutoSize = true;
             panel.BackColor = Color.Gray;
 
             CheckBox nameCheckBox = new CheckBox();
             nameCheckBox.Text = "Компания";
-            nameCheckBox.Location = new Point(10, 3);
+            nameCheckBox.Location = new Point(5, 3);
             nameCheckBox.Width = 90;
             panel.Controls.Add(nameCheckBox);
 
             TextBox buildings = new TextBox();
             buildings.Location = new Point(100, 5);
-            buildings.Width = 50;
+            buildings.Width = 20;
             panel.Controls.Add(buildings);
 
             Label priceList = new Label();
-            priceList.Location = new Point(150, 8);
+            priceList.Location = new Point(125, 8);
             priceList.Width = 70;
             priceList.Text = "100, 5, 7, 50";
             priceList.AutoSize = true;
             panel.Controls.Add(priceList);
 
             TextBox player = new TextBox();
-            player.Location = new Point(220, 5);
-            player.Width = 50;
+            player.Location = new Point(200, 5);
+            player.Width = 20;
             panel.Controls.Add(player);
             
             panel.BackColor = Color.CadetBlue;
