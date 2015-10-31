@@ -31,10 +31,10 @@ namespace MillionareCalculator
             panel.Location = new Point(13, 120);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 150);
+            panel.Location = new Point(13, 160);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 180);
+            panel.Location = new Point(13, 200);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
             panel.Location = new Point(13, 210);
@@ -48,33 +48,35 @@ namespace MillionareCalculator
             Panel panel = new Panel();
             panel.Name = "CompanyName"/* + company.Id.ToString()*/;
             panel.Height = 30;
-            panel.Width = 400;
+            panel.Width = 350;
             panel.AutoSize = true;
             panel.BackColor = Color.Gray;
 
             CheckBox nameCheckBox = new CheckBox();
             nameCheckBox.Text = "Компания";
-            nameCheckBox.Location = new Point(10, 0);
+            nameCheckBox.Location = new Point(10, 3);
             nameCheckBox.Width = 90;
             panel.Controls.Add(nameCheckBox);
 
             TextBox buildings = new TextBox();
-            buildings.Location = new Point(100, 0);
+            buildings.Location = new Point(100, 5);
             buildings.Width = 50;
             panel.Controls.Add(buildings);
 
             Label priceList = new Label();
-            priceList.Location = new Point(150, 0);
+            priceList.Location = new Point(150, 8);
             priceList.Width = 70;
             priceList.Text = "100, 5, 7, 50";
             priceList.AutoSize = true;
             panel.Controls.Add(priceList);
 
             TextBox player = new TextBox();
-            player.Location = new Point(220, 0);
+            player.Location = new Point(220, 5);
             player.Width = 50;
             panel.Controls.Add(player);
-
+            
+            panel.BackColor = Color.CadetBlue;
+            panel.AutoSize = true;
             return panel;
         }
 
