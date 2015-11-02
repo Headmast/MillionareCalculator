@@ -20,24 +20,30 @@ namespace MillionareCalculator
         public MainForm()
         {
             InitializeComponent();
-            sector = new Sector();
+            
             companies = new CompaniesList();
+            sector = new Sector(new List<Company>());
             this.conrols();
         }
 
         private void conrols()
         {
+            Label sectorNameLabel = new Label();
+            sectorNameLabel.Text = "Промышленность";
+            sectorNameLabel.Location = new Point(13, 7);
+            this.panel3.Controls.Add(sectorNameLabel);
+
             Panel panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 120);
+            panel.Location = new Point(13, 30);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 160);
+            panel.Location = new Point(13, 70);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 200);
+            panel.Location = new Point(13, 110);
             this.panel3.Controls.Add(panel);
             panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 210);
+            panel.Location = new Point(13, 150);
             this.panel3.Controls.Add(panel);
             //Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
         }
@@ -125,10 +131,7 @@ namespace MillionareCalculator
             this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 
