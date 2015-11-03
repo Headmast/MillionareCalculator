@@ -33,6 +33,7 @@ namespace MillionareCalculator
             sectorNameLabel.Location = new Point(13, 7);
             this.panel3.Controls.Add(sectorNameLabel);
 
+
             Panel panel = this.createCompanyPanel(null);
             panel.Location = new Point(13, 30);
             this.panel3.Controls.Add(panel);
