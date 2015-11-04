@@ -31,8 +31,9 @@ namespace MillionareCalculator
             Label sectorNameLabel = new Label();
             sectorNameLabel.Text = "Промышленность";
             sectorNameLabel.Location = new Point(13, 7);
+            sectorNameLabel.BackColor = Color.Gray;
+            sectorNameLabel.AutoSize = true;
             this.panel3.Controls.Add(sectorNameLabel);
-
 
             Panel panel = this.createCompanyPanel(null);
             panel.Location = new Point(13, 30);
@@ -58,9 +59,16 @@ namespace MillionareCalculator
         }
 
         // get rent value
+        private int calculateRent ()
+        {
+            return 0;
+        }
 
         // get tax value
-
+        private int calculateTax()
+        {
+            return 0;
+        }
 
         private Panel createCompanyPanel(Company company)
         {
