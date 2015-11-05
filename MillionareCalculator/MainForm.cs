@@ -13,8 +13,8 @@ namespace MillionareCalculator
 {
     public partial class MainForm : Form
     {
-        private Int32 logCounter = 0;
-        private Sector sector;
+        private Int32 logCounter = 0;   //move counter for logger
+        private Sector sector;          //sector of companies
         private CompaniesList companies;
 
         public MainForm()
@@ -26,6 +26,9 @@ namespace MillionareCalculator
             this.conrols();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void conrols()
         {
             Label sectorNameLabel = new Label();
@@ -49,7 +52,12 @@ namespace MillionareCalculator
             this.panel3.Controls.Add(panel);
             //Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sector"></param>
+        /// <returns></returns>
         private Panel createSectorPanel(Sector sector)
         {
             Panel panel = new Panel();
@@ -69,7 +77,12 @@ namespace MillionareCalculator
         {
             return 0;
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="company"></param>
+        /// <returns></returns>
         private Panel createCompanyPanel(Company company)
         {
             Panel panel = new Panel();
@@ -77,7 +90,6 @@ namespace MillionareCalculator
             panel.Height = 30;
             panel.Width = 225;
             panel.AutoSize = true;
-            panel.BackColor = Color.Gray;
 
             CheckBox nameCheckBox = new CheckBox();
             nameCheckBox.Text = "Компания";
@@ -107,6 +119,11 @@ namespace MillionareCalculator
             return panel;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ThrowDice_Click(object sender, EventArgs e)
         {
             Int32 firstValue;
@@ -129,6 +146,11 @@ namespace MillionareCalculator
             this.loggerTextBox.AppendText("\r\n" + logCounter.ToString() + " - " + this.sumDiceLabel.Text);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxDice_TextChanged(object sender, EventArgs e)
         {
             Int32 firstValue;
