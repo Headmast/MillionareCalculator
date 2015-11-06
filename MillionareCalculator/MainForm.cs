@@ -79,7 +79,8 @@ namespace MillionareCalculator
         }
         
         /// <summary>
-        /// 
+        /// Создание панели с информацией про организацию, со всеми элементами
+        /// Ценой покупки, аренды, налогов и построек плюс принадлежность игроку
         /// </summary>
         /// <param name="company"></param>
         /// <returns></returns>
@@ -120,7 +121,7 @@ namespace MillionareCalculator
         }
 
         /// <summary>
-        /// 
+        /// Бросок двух кубиков, возможны случайных бросок или специальный ввод
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -147,7 +148,7 @@ namespace MillionareCalculator
         }
 
         /// <summary>
-        /// 
+        /// Событие отлавливашющее ввод значений кубика
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -161,8 +162,6 @@ namespace MillionareCalculator
             this.secondDiceLabel.Text = secondValue.ToString();
             this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
         }
-
-       
     }
 }
 
