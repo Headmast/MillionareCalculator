@@ -8,5 +8,13 @@ namespace MillionareCalculator.GameObject
 {
     class PlayersList
     {
+        private List<Player> _Players;
+
+        internal List<Player> Players
+        {
+            get { return _Players; }
+            set { _Players = value; }
+        }
+
     }
 }
