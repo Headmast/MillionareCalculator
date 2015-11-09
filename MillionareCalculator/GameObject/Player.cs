@@ -32,5 +32,12 @@ namespace MillionareCalculator.GameObject
             set { _Companies = value; }
         }
 
+        private int _MoveOrder;
+
+        public int MoveOrder
+        {
+            get { return _MoveOrder; }
+            set { _MoveOrder = value; }
+        }
     }
 }
