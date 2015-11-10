@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MillionareCalculator.GameObject
 {
+    /// <summary>
+    /// Список игроков
+    /// </summary>
     class PlayersList
     {
         private List<Player> _Players;
@@ -15,6 +18,5 @@ namespace MillionareCalculator.GameObject
             get { return _Players; }
             set { _Players = value; }
         }
-
     }
 }

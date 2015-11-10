@@ -16,6 +16,9 @@ namespace MillionareCalculator
         private Int32 logCounter = 0;   //move counter for logger
         private Sector sector;          //sector of companies
         private CompaniesList companies;
+        private Label taxLabel;
+        private List<Company> companiesList;
+
 
         public MainForm()
         {
@@ -38,19 +41,27 @@ namespace MillionareCalculator
             sectorNameLabel.AutoSize = true;
             this.panel3.Controls.Add(sectorNameLabel);
 
-            Panel panel = this.createCompanyPanel(null);
+            List<Company> companies = new List<Company>();
+            Company company = new Company(1, "Магазин", 100, 5, 15, 50);
+            companies.Add(company);
+            company = new Company(2, "Лавка", 150, 5, 15, 50);
+            companies.Add(company);
+            company = new Company(3, "Ресторан", 200, 5, 15, 50);
+            companies.Add(company);
+
+            this.companiesList = companies;
+
+
+            Panel panel = this.createCompanyPanel(companies[0]);
             panel.Location = new Point(13, 30);
             this.panel3.Controls.Add(panel);
-            panel = this.createCompanyPanel(null);
+            panel = this.createCompanyPanel(companies[1]);
             panel.Location = new Point(13, 70);
             this.panel3.Controls.Add(panel);
-            panel = this.createCompanyPanel(null);
+            panel = this.createCompanyPanel(companies[2]);
             panel.Location = new Point(13, 110);
             this.panel3.Controls.Add(panel);
-            panel = this.createCompanyPanel(null);
-            panel.Location = new Point(13, 150);
-            this.panel3.Controls.Add(panel);
-            //Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
+            Panel currentPanel = (Panel)this.panel3.Controls.Find("CompanyName", false).FirstOrDefault();
         }
         
         /// <summary>
@@ -93,7 +104,7 @@ namespace MillionareCalculator
             panel.AutoSize = true;
 
             CheckBox nameCheckBox = new CheckBox();
-            nameCheckBox.Text = "Компания";
+            nameCheckBox.Text = company.Name;
             nameCheckBox.Location = new Point(5, 3);
             nameCheckBox.Width = 90;
             panel.Controls.Add(nameCheckBox);
@@ -106,12 +117,13 @@ namespace MillionareCalculator
             Label priceList = new Label();
             priceList.Location = new Point(125, 8);
             priceList.Width = 70;
-            priceList.Text = "100, 5, 7, 50";
+            priceList.Text = company.Price.ToString() + ", " + company.Tax.ToString() + ", " + company.Rent.ToString();
             priceList.AutoSize = true;
             panel.Controls.Add(priceList);
 
             TextBox player = new TextBox();
             player.Location = new Point(200, 5);
+            player.Name = "PlayerTextBox" + company.Id.ToString();
             player.Width = 20;
             panel.Controls.Add(player);
             
@@ -161,6 +173,31 @@ namespace MillionareCalculator
             this.firstDiceLabel.Text = firstValue.ToString();
             this.secondDiceLabel.Text = secondValue.ToString();
             this.sumDiceLabel.Text = (firstValue + secondValue).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.taxLabel == null)
+            {
+                this.taxLabel = new Label();
+                this.taxLabel.Location = new Point(430, 121);
+                this.taxLabel.AutoSize = true;
+                this.Controls.Add(this.taxLabel);
+            }
+            
+
+            Int32 tax = 0;
+            foreach (Company company in this.companiesList)
+            {
+                TextBox playerTextBox = (TextBox)this.panel3.Controls.Find("PlayerTextBox" + company.Id.ToString(), true).FirstOrDefault();
+                String playerId = playerTextBox.Text;
+                if (playerId.Equals("1"))
+                {
+                    tax += company.Tax;
+                }
+            }
+
+            this.taxLabel.Text = tax.ToString();
         }
     }
 }
