@@ -18,7 +18,7 @@ namespace MillionareCalculator
         private CompaniesList companies;
         private Label taxLabel;
         private List<Company> companiesList;
-
+        private List<Player> playersList;
 
         public MainForm()
         {
@@ -26,6 +26,13 @@ namespace MillionareCalculator
             
             companies = new CompaniesList();
             sector = new Sector(new List<Company>());
+            this.playersList = new List<Player>();
+            Player player = new Player();
+            player.Id = 1;
+            this.playersList.Add(player);
+            player = new Player();
+            player.Id = 2;
+            this.playersList.Add(player);
             this.conrols();
         }
 
@@ -184,20 +191,22 @@ namespace MillionareCalculator
                 this.taxLabel.AutoSize = true;
                 this.Controls.Add(this.taxLabel);
             }
+            this.taxLabel.Text = "";
             
-
-            Int32 tax = 0;
-            foreach (Company company in this.companiesList)
+            foreach (Player player in this.playersList) 
             {
-                TextBox playerTextBox = (TextBox)this.panel3.Controls.Find("PlayerTextBox" + company.Id.ToString(), true).FirstOrDefault();
-                String playerId = playerTextBox.Text;
-                if (playerId.Equals("1"))
+                Int32 tax = 0;
+                foreach (Company company in this.companiesList)
                 {
-                    tax += company.Tax;
+                    TextBox playerTextBox = (TextBox)this.panel3.Controls.Find("PlayerTextBox" + company.Id.ToString(), true).FirstOrDefault();
+                    String playerId = playerTextBox.Text;
+                    if (playerId.Equals(player.Id.ToString()))
+                    {
+                        tax += company.Tax;
+                    }
                 }
+                this.taxLabel.Text += player.Id.ToString() + ": " + tax.ToString() + "\n";
             }
-
-            this.taxLabel.Text = tax.ToString();
         }
     }
 }
