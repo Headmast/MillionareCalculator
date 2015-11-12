@@ -99,13 +99,15 @@ namespace MillionareCalculator.GameObject
         }
 
         public Company(int id, String name, int price, int rent, int tax, int buildingPrice)
+            : this(price, rent, tax, buildingPrice)
         {
             _Id = id;
             _Name = name;
-            _Price = price;
-            _Rent = rent;
-            _Tax = tax;
-            _BuildingPrice = buildingPrice;
+        }
+
+        public Company (int id, String name, int sectorId, int price, int rent, int tax, int buildingPrice) : this(id, name, price, rent, tax, buildingPrice)
+        {
+            _SectorId = sectorId;
         }
     }
 }

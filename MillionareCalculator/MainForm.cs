@@ -49,11 +49,11 @@ namespace MillionareCalculator
             this.panel3.Controls.Add(sectorNameLabel);
 
             List<Company> companies = new List<Company>();
-            Company company = new Company(1, "Магазин", 100, 5, 15, 50);
+            Company company = new Company(1, "Магазин", 1, 100, 5, 15, 50);
             companies.Add(company);
-            company = new Company(2, "Лавка", 150, 5, 15, 50);
+            company = new Company(2, "Лавка", 1, 150, 5, 15, 50);
             companies.Add(company);
-            company = new Company(3, "Ресторан", 200, 5, 15, 50);
+            company = new Company(3, "Ресторан", 1, 200, 5, 15, 50);
             companies.Add(company);
 
             this.companiesList = companies;
