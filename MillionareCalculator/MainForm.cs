@@ -107,7 +107,7 @@ namespace MillionareCalculator
             Panel panel = new Panel();
             panel.Name = "CompanyName"/* + company.Id.ToString()*/;
             panel.Height = 30;
-            panel.Width = 225;
+            panel.Width = 245;
             panel.AutoSize = true;
 
             CheckBox nameCheckBox = new CheckBox();
@@ -123,13 +123,15 @@ namespace MillionareCalculator
 
             Label priceList = new Label();
             priceList.Location = new Point(125, 8);
-            priceList.Width = 70;
-            priceList.Text = company.Price.ToString() + ", " + company.Tax.ToString() + ", " + company.Rent.ToString();
+            priceList.Width = 90;
+
+            priceList.Text = company.Price.ToString().PadLeft(4, ' ') + ", " + company.Tax.ToString().PadLeft(4, ' ') + ", "
+                + company.Rent.ToString().PadLeft(4, ' ') + ", " + company.BuldingPrice.ToString().PadLeft(4, ' ');
             priceList.AutoSize = true;
             panel.Controls.Add(priceList);
 
             TextBox player = new TextBox();
-            player.Location = new Point(200, 5);
+            player.Location = new Point(224, 5);
             player.Name = "PlayerTextBox" + company.Id.ToString();
             player.Width = 20;
             panel.Controls.Add(player);
@@ -137,6 +139,19 @@ namespace MillionareCalculator
             panel.BackColor = Color.CadetBlue;
             panel.AutoSize = true;
             return panel;
+        }
+
+        private String spaceFormatString(String valueString, int numberSimbols)
+        {
+            String resultString = valueString;
+            if (valueString.Length < numberSimbols) {
+                for (int i = 0; i < numberSimbols - valueString.Length; i++) 
+                {
+                    
+                }
+            }
+            
+            return resultString;
         }
 
         /// <summary>

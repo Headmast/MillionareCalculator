@@ -49,8 +49,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -229,6 +231,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(10, 116);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(338, 247);
@@ -253,6 +256,15 @@
             this.button2.Text = "Аренда";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(248, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "       Название        Стр  Цена  Нал  Ар   Ц з  Игр";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +282,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,6 +312,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
     }
 }
 
